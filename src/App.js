@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { AnimatePresence } from 'framer-motion';
+import { Route, Switch, useLocation } from 'react-router';
+import HomeAr from './components/HomeAr/HomeAr';
+import HomeEn from './components/HomeEn/HomeEn';
+import './styles/App.css';
 
-function App() {
+const containerVariants = {
+  hidden: {
+      opacity: 0
+  },
+  visible: {
+      opacity: 1,
+      transition: { delay: .5, duration: .5 }
+  },
+  exit: {
+      opacity: 0,
+      transition: { ease: 'easeInOut' }
+  }
+}
+
+const App = () => {
+  const location = useLocation();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AnimatePresence>
+        <Switch location={location} key={location.key}>
+          <Route path='/' exact>
+            <HomeEn containerVariants={containerVariants} />
+          </Route>
+          <Route path='/home-en'>
+            <HomeEn containerVariants={containerVariants} />
+          </Route>
+          <Route path='/home-ar'>
+            <HomeAr containerVariants={containerVariants} />
+          </Route>
+        </Switch>
+      </AnimatePresence>
     </div>
-  );
+  )
 }
 
 export default App;

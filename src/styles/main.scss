@@ -1,0 +1,359 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
+
+// Variables -------------------------------------------
+$white: #fff;
+$gray: #c0c0c0;
+$red: #ff0000;
+$red-alt: #a30000;
+
+// Custom fonts ----------------------------------------
+@font-face {
+  font-family: "FaricyNew";
+  src: local("FaricyNew"),
+    url(../fonts/faricynew-regular-webfont.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Heavitas";
+  src: local("Heavitas"), url(../fonts/heavitas-webfont.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Frutiger";
+  font-style: normal;
+  src: url(../fonts/frutiger-lt-arabic-roman.woff2) format("woff2");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: url(../assets/bg-art.jpeg) no-repeat top center;
+  background-size: cover;
+}
+
+body {
+  width: 100%;
+  // max-width: 400px;
+  min-width: 300px;
+  margin: 0 auto;
+  font-family: FaricyNew, Helvetica, sans-serif;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+// SASS Mixins ------------------------------------------------
+@mixin flex-it() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Navbar styles ------------------------------------------------
+
+.nav {
+  @include flex-it();
+  height: 58px;
+  padding: 5px 0px;
+}
+
+.nav-a {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 5px;
+  &-link {
+    .nav-a-logo {
+      //   max-width: 80px;
+      height: 45px;
+    }
+  }
+}
+
+.nav-b {
+  @include flex-it();
+  height: 100%;
+  .cta {
+    background-color: $red;
+    padding: 7px 10px;
+    // height: 32px;
+    border-radius: 20px;
+    i {
+      margin-right: 10px;
+    }
+    &-btn {
+      font-family: FaricyNew, Helvetica, sans-serif;
+      color: $white;
+    }
+  }
+  .lang {
+    height: 100%;
+    a {
+      height: 100%;
+      display: grid;
+      place-content: center;
+      padding: 0 20px;
+      .lang-ar {
+        max-width: 38px;
+      }
+    }
+  }
+}
+
+// Arabic styles
+.main-ar {
+  .nav {
+    flex-direction: row-reverse;
+    &-b {
+      flex-direction: row-reverse;
+      .cta-btn {
+        @include flex-it();
+        flex-direction: row-reverse;
+        font-family: Frutiger, Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        i {
+          margin-right: 0px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+// Footer styles ------------------------------------------------------
+
+.footer-34 {
+  text-align: center;
+  p {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+}
+
+// Media slider styles ------------------------------------------------
+
+.media-slide {
+  margin-bottom: 40px;
+}
+
+.media-item {
+  outline: none;
+  &-banner {
+    margin: 5px;
+    img {
+      max-width: 100%;
+      margin: 0 auto;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
+    }
+  }
+}
+
+.slick-active .media-item-content {
+  opacity: 1;
+  transition: opacity 1s ease 150ms;
+}
+
+.media-item-content {
+  opacity: 0;
+  transition: opacity 1s ease 150ms;
+  .mi-content {
+    &-head {
+      font-family: Heavitas, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.2;
+      // text-align: left;
+      margin: 0;
+    }
+    &-list {
+      margin-top: 10px;
+      li {
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-align: left;
+        padding-left: 20px;
+        background-image: url(../assets/check.svg);
+        background-repeat: no-repeat;
+        background-size: 11px;
+        background-position: left 6px;
+      }
+    }
+  }
+}
+
+// Arabic styles
+.main-ar {
+  .mi-content {
+    text-align: right;
+    font-family: Frutiger, Helvetica, sans-serif;
+    &-head {
+      text-align: right;
+      font-family: Frutiger, Helvetica, sans-serif;
+      font-weight: bold;
+    }
+    &-list {
+      li {
+        font-weight: normal;
+        text-align: right;
+        padding-left: 0;
+        padding-right: 20px;
+        background-position: right 6px;
+      }
+    }
+  }
+}
+
+// Product slides styles ------------------------------------------------
+
+.product-slide {
+  margin-bottom: 30px;
+}
+
+.product-item {
+  outline: none;
+  padding: 6px;
+  padding-top: 15px;
+  position: relative;
+  .tool-banner {
+    position: absolute;
+    top: 0px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    color: $white;
+    background-color: $red;
+    padding: 5px 10px;
+    border-radius: 2px 40px 2px 40px;
+    font-size: 13px;
+    i {
+      margin: 0 5px;
+    }
+  }
+}
+
+.product-item-b {
+  .pi-box-a {
+    background-image: url(../assets/devices-plus.svg);
+  }
+}
+
+.pi-box {
+  font-size: 13px;
+  border-radius: 8px;
+  color: $gray;
+  background: rgb(45, 45, 45);
+  // overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(45, 45, 45, 1) 0%,
+    rgba(29, 29, 29, 1) 100%
+  );
+  .pi-box-inner {
+    padding: 15px;
+    padding-bottom: 0;
+    min-height: 264px;
+  }
+}
+
+.pi-box-a {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #444;
+  min-height: 45px;
+  background-image: url(../assets/devices.svg);
+  background-size: 80px;
+  background-repeat: no-repeat;
+  background-position: right 50%;
+
+  .pi-box-head {
+    color: $white;
+    font-size: 13px;
+    margin-bottom: 5px;
+    font-family: Heavitas, Helvetica, sans-serif;
+  }
+  .pi-box-low {
+    .price {
+      font-weight: bold;
+    }
+  }
+}
+
+.pi-box-b {
+  .pi-box-list {
+    font-weight: bold;
+    li {
+      margin-bottom: 10px;
+      padding-left: 10px;
+      position: relative;
+      &::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        background-color: $gray;
+        position: absolute;
+        top: 5px;
+        left: 0;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.pi-box-cta {
+  background-color: $red-alt;
+  border-radius: 0 0 8px 8px;
+  .pi-box-link {
+    color: $white;
+    text-align: center;
+    width: 100%;
+    display: block;
+    height: 34px;
+    line-height: 34px;
+    font-weight: bold;
+  }
+}
+
+// Arabic styles
+.main-ar {
+  font-family: Frutiger, Arial, Helvetica, sans-serif;
+  .pi-box-inner {
+    min-height: 315px;
+  }
+  .pi-box-a {
+    text-align: right;
+    background-position: left 50%;
+    .pi-box-head {
+      font-family: Frutiger, Arial, Helvetica, sans-serif;
+      margin-bottom: 0;
+    }
+  }
+  .product-item-b .pi-box-a {
+    background-image: url(../assets/devices-plus-reverse.svg);
+    background-position: left 70%;
+  }
+  .pi-box-b {
+    .pi-box-list {
+      li {
+        font-family: Frutiger, Arial, Helvetica, sans-serif;
+        font-weight: normal;
+        padding-left: 0;
+        padding-right: 15px;
+        text-align: right;
+        line-height: 18px;
+        &::before {
+          right: 0;
+          left: auto;
+        }
+      }
+    }
+  }
+}
