@@ -37,7 +37,7 @@ const ProductSlide = () => {
                                 </div>
                             </div>
                             <div className="pi-box-cta">
-                                <a className="pi-box-link" href="https://stream.osn.com/">Start Your Free Trial</a>
+                                <a className="pi-box-link" href="/">Start Your Free Trial</a>
                             </div>
                         </div>
 
@@ -68,7 +68,7 @@ const ProductSlide = () => {
                                 </div>
                             </div>
                             <div className="pi-box-cta">
-                                <a className="pi-box-link" href="https://stream.osn.com/">Start Your Free Trial</a>
+                                <a className="pi-box-link" href="/">Start Your Free Trial</a>
                             </div>
                         </div>
 
