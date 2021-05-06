@@ -2,7 +2,7 @@
 
 ## Check it Live
 
-Direct link: [https://tra.netlify.app](https://tra.netlify.app)
+Direct link: [https://osn-mobile.netlify.app/](https://osn-mobile.netlify.app/)
 
 ## Or run it locally
 
