@@ -1,6 +1,8 @@
 module.exports = {
     //...
   devServer: {
-     historyApiFallback: true,
+     historyApiFallback: {
+         index: '/'
+     },
    },
  };
